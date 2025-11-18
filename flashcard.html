@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Flashcard com Imagens</title>
+  <title>Flashcard com Imagens e Descrições</title>
   <style>
     :root {
-      --card-width: 800px;  /* tamanho reduzido */
-      --card-height: 500px;
+      --card-width: 800px; /* tamanho reduzido */
+      --card-height: 550px; /* Aumentado para acomodar a descrição */
       --radius: 20px;
     }
 
@@ -48,19 +48,49 @@
       border-radius: var(--radius);
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
       backface-visibility: hidden;
-      background-size: cover;
-      background-position: center;
+      background-color: #ffffff; /* Fundo branco para os cards */
+      
+      /* Adicionando Flexbox para organizar imagem e texto */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start; /* Alinha o conteúdo ao topo */
+      padding: 20px; /* Espaçamento interno */
+      box-sizing: border-box; /* Garante que o padding não aumente o tamanho total */
     }
 
-    /* Frente do card */
-    .card-front {
-      background-image: url("https://raw.githubusercontent.com/PUCPR4D/LogisticaInternacional/main/AdobeStock_185218200.jpeg");
-    }
-
-    /* Verso do card */
     .card-back {
-      background-image: url("https://raw.githubusercontent.com/PUCPR4D/LogisticaInternacional/main/Mural_Etnias,_Panorama_(Eduardo_Kobra).jpg");
       transform: rotateY(180deg);
+    }
+
+    .card-image {
+      max-width: 100%; /* Garante que a imagem não transborde */
+      max-height: 70%; /* Limita a altura da imagem para deixar espaço para a descrição */
+      height: auto;
+      border-radius: 10px;
+      object-fit: contain; /* Garante que a imagem seja totalmente visível sem cortar */
+      margin-bottom: 15px; /* Espaço entre a imagem e a descrição */
+    }
+
+    .card-description {
+      font-size: 0.95em;
+      color: #333;
+      text-align: center;
+      line-height: 1.5;
+    }
+
+    /* Media query para telas menores (celulares) */
+    @media (max-width: 768px) {
+        :root {
+            --card-width: 90vw;
+            --card-height: 60vh;
+        }
+        .card-image {
+            max-height: 60%;
+        }
+        .card-description {
+            font-size: 0.8em;
+        }
     }
   </style>
 </head>
@@ -68,8 +98,18 @@
 
   <article class="flashcard" aria-label="Flashcard com imagens">
     <div class="card-inner">
-      <div class="card-front"></div>
-      <div class="card-back"></div>
+      <div class="card-front">
+        <img class="card-image" src="https://raw.githubusercontent.com/PUCPR4D/LogisticaInternacional/main/AdobeStock_185218200.jpeg" alt="Mão segurando lata de spray, pintando um muro.">
+        <div class="card-description">
+          A imagem mostra a mão de uma pessoa segurando uma lata de spray preta com tampa laranja, aplicando tinta laranja sobre uma parede de tijolos.
+        </div>
+      </div>
+      <div class="card-back">
+        <img class="card-image" src="https://raw.githubusercontent.com/PUCPR4D/LogisticaInternacional/main/Mural_Etnias,_Panorama_(Eduardo_Kobra).jpg" alt="Mural urbano com retratos de pessoas no estilo de Eduardo Kobra.">
+        <div class="card-description">
+          A imagem mostra um extenso mural urbano ocupando toda a lateral de um grande paredão curvo em uma área pública aberta. O mural é composto por retratos de pessoas pintados com cores vivas e contrastantes, usando formas geométricas, uma característica marcante do estilo do artista Eduardo Kobra.
+        </div>
+      </div>
     </div>
   </article>
 
