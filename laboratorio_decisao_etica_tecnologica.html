@@ -45,12 +45,174 @@
 
     <div class="bg-white p-6 rounded-lg shadow-sm mb-8">
       <p class="text-gray-700 leading-relaxed">
-        Apresentação:
-        Compreender o impacto social e ético da tecnologia é uma competência fundamental para profissionais da educação.
-        Em um mundo cada vez mais digital e diverso, decisões tecnológicas nunca são neutras.
+        Apresentação: 
+Compreender o impacto social e ético da tecnologia é uma competência fundamental para profissionais da educação. Em um mundo cada vez mais digital e diverso, decisões tecnológicas nunca são neutras: elas moldam acessos, silenciam vozes ou ampliam direitos. Desenvolver a capacidade de analisar criticamente essas ferramentas permite uma atuação mais consciente, empática e socialmente responsável, seja na escola, na gestão pública ou em outros espaços educativos.
+Este simulador propõe um treino prático para desenvolver essa sensibilidade crítica, colocando você diante de situações reais em que tecnologia, inclusão e ética se cruzam.
       </p>
+      <h2 class="text-xl font-extrabold uppercase mb-3" style="color: #9654ff;">
+        Sua tarefa:
+      </h2>
+      <p class="text-gray-700 leading-relaxed">Analise os cenários apresentados e, para cada um deles:</p>
+      <p class="text-gray-700 leading-relaxed">1.Identifique quais dimensões sociais, éticas e educacionais estão presentes no caso (por exemplo: exclusão digital, vieses algorítmicos, acessibilidade, desigualdade estrutural, direitos humanos).</p>
+      <p class="text-gray-700 leading-relaxed">2.Relacione o cenário a pelo menos um conceito ou discussão abordada na aula (como preconceito, discriminação, empatia, empoderamento, tecnologia como ferramenta social).</p>
+      <p class="text-gray-700 leading-relaxed">3.Proponha uma breve interpretação crítica, explicando como o uso da tecnologia, naquele contexto, pode contribuir para a inclusão ou reforçar desigualdades, considerando o desenvolvimento humano e social.</p>
+      <p class="text-gray-700 leading-relaxed">Essa análise será debatida com seus colegas na webconferência, ampliando o olhar coletivo e permitindo a construção de aprendizagens a partir de diferentes perspectivas.</p>
+
+    </div>
+    
+    <div class="bg-white p-6 rounded-lg shadow-sm">
+      <div id="progresso" class="flex justify-center gap-2 mb-2"></div>
+      <div id="pontuacao" class="text-center text-gray-700 mb-6 font-normal uppercase text-sm"></div>
+
+      <div class="flex flex-wrap justify-center gap-4 mb-6">
+        <button id="btn1" class="text-white px-5 py-2 rounded-md transition duration-300 font-semibold" style="background-color: #6D64AE;" onmouseover="this.style.backgroundColor='#5e569a'" onmouseout="this.style.backgroundColor='#6D64AE'" onclick="mostrarCaso(1)">Caso 1</button>
+        <button id="btn2" class="text-white px-5 py-2 rounded-md transition duration-300 font-semibold" style="background-color: #6D64AE;" onmouseover="this.style.backgroundColor='#5e569a'" onmouseout="this.style.backgroundColor='#6D64AE'" onclick="mostrarCaso(2)">Caso 2</button>
+        <button id="btn3" class="text-white px-5 py-2 rounded-md transition duration-300 font-semibold" style="background-color: #6D64AE;" onmouseover="this.style.backgroundColor='#5e569a'" onmouseout="this.style.backgroundColor='#6D64AE'" onclick="mostrarCaso(3)">Caso 3</button>
+        <button id="btn4" class="text-white px-5 py-2 rounded-md transition duration-300 font-semibold" style="background-color: #6D64AE;" onmouseover="this.style.backgroundColor='#5e569a'" onmouseout="this.style.backgroundColor='#6D64AE'" onclick="mostrarCaso(4)">Caso 4</button>
+      </div>
+
+      <div id="caixaCaso" class="bg-gray-50 p-6 rounded-md border border-gray-200 transition-all duration-500">
+        <h2 id="tituloCaso" class="text-xl font-extrabold mb-2 uppercase" style="color: #9654ff;">Escolha um cenário 👆</h2>
+        <p id="textoCaso" class="text-gray-600 mb-4"></p>
+
+        <textarea id="respostaAluno" class="w-full border rounded p-3 mb-4 text-gray-700 bg-white" rows="4" placeholder="Escreva sua resposta/reflexão aqui..."></textarea>
+        <button class="text-white px-6 py-2 rounded-md transition duration-300 font-semibold" style="background-color: #ff0040;" onmouseover="this.style.backgroundColor='#e00038'" onmouseout="this.style.backgroundColor='#ff0040'" onclick="avaliarResposta()">Enviar Resposta</button>
+
+        <div id="feedback" class="mt-4 text-gray-800 font-semibold"></div>
+        <div id="reflexao" class="mt-4 font-semibold" style="color: #DB5284;"></div>
+        <div id="medalha" class="mt-4 text-center font-bold medalha" style="color: #8a0538;"></div>
+      </div>
     </div>
   </div>
+
+<script>
+  const casos = {
+    1: {
+      descricao: "Plataforma Educacional Inclusiva
+Uma rede de ensino adota uma nova plataforma digital para aulas, avaliações e comunicação com estudantes e famílias. A ferramenta funciona bem em celulares modernos e exige conexão constante com a internet. Professores percebem, porém, que estudantes de áreas rurais, famílias de baixa renda e alunos com deficiência enfrentam dificuldades de acesso, atrasos nas atividades e exclusão das interações online.
+Apesar disso, a gestão argumenta que a plataforma é “tecnicamente avançada” e que os problemas se devem à falta de adaptação dos usuários.",
+      reflexao: "Não há respostas únicas ou “certas”. Assim, vamos deixar uma sugestão.
+Eu não implementaria essa tecnologia exatamente do jeito que está. Embora a personalização possa melhorar o processo de aprendizagem, ela parte do pressuposto de que todos os estudantes têm acesso contínuo à internet e dispositivos adequados, o que não corresponde à realidade de muitas famílias.
+Estudantes de baixa renda, moradores de áreas rurais ou com deficiência podem estar sendo invisibilizados, especialmente aqueles que dependem exclusivamente da escola para acessar tecnologia.
+Um risco ético importante é o uso e a proteção dos dados das crianças e adolescentes, além do perigo de a IA reforçar estereótipos ao classificar estudantes como “bons” ou “fracos” com base apenas em desempenho mensurável.
+Para que essa tecnologia fosse inclusiva, seria necessário garantir acesso offline, transparência sobre o uso dos dados e acompanhamento pedagógico humano, evitando que decisões educacionais fiquem exclusivamente nas mãos do algoritmo.",
+      concluido: false
+    },
+    2: {
+      descricao: " Aplicativo de Denúncia no Ambiente Escolar
+Uma secretaria de educação lança um aplicativo para denúncias de bullying, racismo e discriminação. O app promete anonimato e rapidez, mas exige longos formulários escritos, não possui recursos de acessibilidade e não oferece retorno sobre o andamento das denúncias.
+Com o tempo, professores e estudantes relatam que apenas um grupo específico de usuários utiliza a ferramenta com frequência, enquanto outros simplesmente deixam de denunciar.",
+      reflexao: "Eu implementaria a tecnologia, mas com ajustes importantes. A proposta é positiva porque cria um canal seguro de denúncia, especialmente para estudantes que têm medo de se expor.
+No entanto, podem estar sendo invisibilizados estudantes que não têm acesso fácil à internet ou que não dominam a linguagem digital, como crianças mais novas ou estudantes com deficiência intelectual.
+Um risco ético seria o uso inadequado das denúncias, seja por falsas acusações ou pela falta de retorno institucional, o que pode gerar descrédito e frustração.
+Para tornar a ferramenta realmente inclusiva, ela deveria estar integrada a ações educativas presenciais, ter acompanhamento de profissionais da escola e oferecer acessibilidade, como leitura por áudio e linguagem simples.",
+      concluido: false
+    },
+    3: {
+      descricao: "Seleção Automatizada de Estagiários
+Uma instituição educacional utiliza um sistema automatizado para selecionar estagiários e professores temporários. O software analisa currículos e históricos acadêmicos para filtrar candidatos. No entanto, observa-se que pessoas com trajetórias educacionais não lineares, formadas em instituições periféricas ou que fizeram pausas nos estudos por questões familiares quase nunca avançam no processo seletivo.
+A equipe responsável afirma que o sistema é “neutro” e baseado apenas em dados objetivos.",
+      reflexao: "Eu implementaria essa tecnologia com cautela. A ideia de reduzir vieses explícitos é positiva, mas o sistema ainda pode carregar vieses implícitos baseados em padrões históricos.
+Professores formados em instituições menos prestigiadas, que muitas vezes atendem populações periféricas, podem ser invisibilizados, mesmo sendo excelentes profissionais.
+O risco ético está em transferir decisões humanas complexas para um algoritmo sem transparência, o que pode reforçar desigualdades de forma silenciosa.
+Para ser inclusiva, essa tecnologia precisaria de auditorias frequentes, diversidade na base de dados e participação humana na decisão final, garantindo que o processo seja justo e contextualizado.",
+      concluido: false
+    },
+    4: {
+      descricao: "Monitoramento de Dados para Políticas Públicas
+Um município passa a utilizar dados digitais para mapear evasão escolar, violência no entorno das escolas e necessidades educacionais especiais. Os dados orientam decisões de investimento, mas não incluem informações desagregadas por raça, deficiência ou território.
+Como resultado, políticas públicas são criadas com base em médias gerais, sem considerar grupos que enfrentam vulnerabilidades específicas.",
+      reflexao: "Eu não implementaria essa tecnologia do jeito que está, pois ela exclui diretamente estudantes com deficiência visual, auditiva ou cognitiva.
+Essas pessoas estão sendo invisibilizadas desde a fase de desenvolvimento da ferramenta, o que revela a ausência de uma lógica inclusiva no projeto.
+O risco ético é naturalizar a exclusão, fazendo com que alguns estudantes precisem de “adaptações paralelas”, enquanto outros usufruem plenamente da tecnologia.
+Para que fosse inclusiva, seria necessário redesenhar a ferramenta desde o início com base em princípios de design universal, garantindo que todos os estudantes possam acessar o conteúdo em igualdade de condições.",
+      concluido: false
+    }
+  };
+
+  let casoAtual = null;
+
+  function atualizarProgresso() {
+    const progresso = document.getElementById("progresso");
+    const pontuacao = document.getElementById("pontuacao");
+    const medalhaDiv = document.getElementById("medalha");
+    progresso.innerHTML = '';
+    let completados = 0;
+
+    for (let i = 1; i <= 4; i++) {
+      const bola = document.createElement("div");
+      bola.className = `w-5 h-5 rounded-full border-2 ${casos[i].concluido ? 'bg-green-500 border-green-600' : 'bg-gray-300 border-gray-400'}`;
+      progresso.appendChild(bola);
+      if (casos[i].concluido) completados++;
+    }
+
+    pontuacao.textContent = `Casos concluídos: ${completados} / 4`;
+
+    if (completados === 4) {
+      medalhaDiv.innerHTML = `🏅 Parabéns! Você completou a atividade!`;
+    } else {
+      medalhaDiv.innerHTML = '';
+    }
+  }
+
+  function mostrarCaso(n) {
+    casoAtual = n;
+
+    const caixa = document.getElementById("caixaCaso");
+    const titulo = document.getElementById("tituloCaso");
+    const texto = document.getElementById("textoCaso");
+    const textarea = document.getElementById("respostaAluno");
+    const feedback = document.getElementById("feedback");
+    const reflexao = document.getElementById("reflexao");
+
+    caixa.classList.add("fade-enter");
+    setTimeout(() => {
+      titulo.textContent = `Caso ${n}`;
+      texto.textContent = casos[n].descricao;
+      textarea.value = "";
+      feedback.textContent = "";
+      reflexao.textContent = "";
+      
+      textarea.disabled = false;
+      caixa.querySelector('button').disabled = false;
+
+      caixa.classList.remove("fade-enter");
+      caixa.classList.add("fade-enter-active");
+    }, 50);
+    setTimeout(() => caixa.classList.remove("fade-enter-active"), 400);
+  }
+
+  function avaliarResposta() {
+    if (casoAtual === null) {
+        document.getElementById("feedback").textContent = "Por favor, selecione um caso primeiro.";
+        return;
+    }
+      
+    const resposta = document.getElementById("respostaAluno").value.trim();
+    const textarea = document.getElementById("respostaAluno");
+    const btnEnviar = document.querySelector("#caixaCaso button");
+
+    if (!resposta) {
+      document.getElementById("feedback").textContent = "Por favor, escreva sua resposta antes de enviar.";
+      return;
+    }
+    
+    casos[casoAtual].concluido = true;
+
+    document.getElementById("feedback").textContent = "✅ Resposta registrada com sucesso!";
+    document.getElementById("reflexao").textContent = casos[casoAtual].reflexao;
+    
+    textarea.disabled = true;
+    btnEnviar.disabled = true;
+
+    atualizarProgresso();
+    document.getElementById(`btn${casoAtual}`).classList.add("botao-concluido");
+  }
+
+  window.onload = function() {
+    atualizarProgresso();
+  };
+</script>
 
 </body>
 </html>
